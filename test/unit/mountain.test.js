@@ -42,7 +42,7 @@ describe('mountains model', () => {
         );
     });
     
-    it('height is no more than 11250', () => {
+    it('height is no greater than 11250', () => {
       const mountain = new Mountain({
         name: 'mountain',
         height: 12000
