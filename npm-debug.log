@@ -1,102 +1,48 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/usr/local/Cellar/node/7.5.0/bin/node',
 1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'bugs',
-1 verbose cli   'hapi-app' ]
+1 verbose cli   'run',
+1 verbose cli   'test' ]
 2 info using npm@4.1.2
 3 info using node@v7.5.0
-4 silly fetchPackageMetaData hapi-app
-5 silly fetchNamedPackageData hapi-app
-6 silly mapToRegistry name hapi-app
-7 silly mapToRegistry using default registry
-8 silly mapToRegistry registry https://registry.npmjs.org/
-9 silly mapToRegistry data Result {
-9 silly mapToRegistry   raw: 'hapi-app',
-9 silly mapToRegistry   scope: null,
-9 silly mapToRegistry   escapedName: 'hapi-app',
-9 silly mapToRegistry   name: 'hapi-app',
-9 silly mapToRegistry   rawSpec: '',
-9 silly mapToRegistry   spec: 'latest',
-9 silly mapToRegistry   type: 'tag' }
-10 silly mapToRegistry uri https://registry.npmjs.org/hapi-app
-11 verbose request uri https://registry.npmjs.org/hapi-app
-12 verbose request no auth needed
-13 info attempt registry request try #1 at 10:26:04 PM
-14 verbose request id de78b7743ea6cbff
-15 http request GET https://registry.npmjs.org/hapi-app
-16 http 404 https://registry.npmjs.org/hapi-app
-17 verbose headers { 'content-type': 'application/json',
-17 verbose headers   'cache-control': 'max-age=0',
-17 verbose headers   'content-length': '2',
-17 verbose headers   'accept-ranges': 'bytes',
-17 verbose headers   date: 'Fri, 23 Jun 2017 05:26:04 GMT',
-17 verbose headers   via: '1.1 varnish',
-17 verbose headers   age: '0',
-17 verbose headers   connection: 'keep-alive',
-17 verbose headers   'x-served-by': 'cache-sea1020-SEA',
-17 verbose headers   'x-cache': 'MISS',
-17 verbose headers   'x-cache-hits': '0',
-17 verbose headers   'x-timer': 'S1498195564.342646,VS0,VE311',
-17 verbose headers   vary: 'Accept-Encoding' }
-18 silly get cb [ 404,
-18 silly get   { 'content-type': 'application/json',
-18 silly get     'cache-control': 'max-age=0',
-18 silly get     'content-length': '2',
-18 silly get     'accept-ranges': 'bytes',
-18 silly get     date: 'Fri, 23 Jun 2017 05:26:04 GMT',
-18 silly get     via: '1.1 varnish',
-18 silly get     age: '0',
-18 silly get     connection: 'keep-alive',
-18 silly get     'x-served-by': 'cache-sea1020-SEA',
-18 silly get     'x-cache': 'MISS',
-18 silly get     'x-cache-hits': '0',
-18 silly get     'x-timer': 'S1498195564.342646,VS0,VE311',
-18 silly get     vary: 'Accept-Encoding' } ]
-19 silly fetchPackageMetaData Error: Registry returned 404 for GET on https://registry.npmjs.org/hapi-app
-19 silly fetchPackageMetaData     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:304:12)
-19 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:282:14)
-19 silly fetchPackageMetaData     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:212:14)
-19 silly fetchPackageMetaData     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:186:22)
-19 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
-19 silly fetchPackageMetaData     at Request.emit (events.js:192:7)
-19 silly fetchPackageMetaData     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1081:10)
-19 silly fetchPackageMetaData     at emitOne (events.js:96:13)
-19 silly fetchPackageMetaData     at Request.emit (events.js:189:7)
-19 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1001:12)
-19 silly fetchPackageMetaData  error for hapi-app { Error: Registry returned 404 for GET on https://registry.npmjs.org/hapi-app
-19 silly fetchPackageMetaData     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:304:12)
-19 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:282:14)
-19 silly fetchPackageMetaData     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:212:14)
-19 silly fetchPackageMetaData     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:186:22)
-19 silly fetchPackageMetaData     at emitTwo (events.js:106:13)
-19 silly fetchPackageMetaData     at Request.emit (events.js:192:7)
-19 silly fetchPackageMetaData     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1081:10)
-19 silly fetchPackageMetaData     at emitOne (events.js:96:13)
-19 silly fetchPackageMetaData     at Request.emit (events.js:189:7)
-19 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1001:12) pkgid: 'hapi-app', statusCode: 404, code: 'E404' }
-20 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/hapi-app
-20 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:304:12)
-20 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:282:14)
-20 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:212:14)
-20 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:186:22)
-20 verbose stack     at emitTwo (events.js:106:13)
-20 verbose stack     at Request.emit (events.js:192:7)
-20 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1081:10)
-20 verbose stack     at emitOne (events.js:96:13)
-20 verbose stack     at Request.emit (events.js:189:7)
-20 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1001:12)
-21 verbose statusCode 404
-22 verbose pkgid hapi-app
-23 verbose cwd /Users/m/Documents/codefellows/401/hapi-app
-24 error Darwin 16.6.0
-25 error argv "/usr/local/Cellar/node/7.5.0/bin/node" "/usr/local/bin/npm" "bugs" "hapi-app"
-26 error node v7.5.0
-27 error npm  v4.1.2
-28 error code E404
-29 error 404 Registry returned 404 for GET on https://registry.npmjs.org/hapi-app
-30 error 404
-31 error 404 'hapi-app' is not in the npm registry.
-32 error 404 You should bug the author to publish it (or use the name yourself!)
-33 error 404 Note that you can also install from a
-34 error 404 tarball, folder, http url, or git url.
-35 verbose exit [ 1, true ]
+4 verbose run-script [ 'pretest', 'test', 'posttest' ]
+5 info lifecycle hapi-app@1.0.0~pretest: hapi-app@1.0.0
+6 silly lifecycle hapi-app@1.0.0~pretest: no script for pretest, continuing
+7 info lifecycle hapi-app@1.0.0~test: hapi-app@1.0.0
+8 verbose lifecycle hapi-app@1.0.0~test: unsafe-perm in lifecycle true
+9 verbose lifecycle hapi-app@1.0.0~test: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/m/Documents/codefellows/401/hapi-app/node_modules/.bin:/Users/m/.gem/ruby/2.4.1/bin:/Users/m/.rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/bin:/Users/m/.rubies/ruby-2.4.1/bin:/usr/local/heroku/bin:~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/git/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:.:/Users/m/mongodb/bin
+10 verbose lifecycle hapi-app@1.0.0~test: CWD: /Users/m/Documents/codefellows/401/hapi-app
+11 silly lifecycle hapi-app@1.0.0~test: Args: [ '-c', 'mocha --recursive' ]
+12 silly lifecycle hapi-app@1.0.0~test: Returned: code: 1  signal: null
+13 info lifecycle hapi-app@1.0.0~test: Failed to exec test script
+14 verbose stack Error: hapi-app@1.0.0 test: `mocha --recursive`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:279:16)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at EventEmitter.emit (events.js:192:7)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at ChildProcess.emit (events.js:192:7)
+14 verbose stack     at maybeClose (internal/child_process.js:890:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+15 verbose pkgid hapi-app@1.0.0
+16 verbose cwd /Users/m/Documents/codefellows/401/hapi-app
+17 error Darwin 16.6.0
+18 error argv "/usr/local/Cellar/node/7.5.0/bin/node" "/usr/local/bin/npm" "run" "test"
+19 error node v7.5.0
+20 error npm  v4.1.2
+21 error code ELIFECYCLE
+22 error hapi-app@1.0.0 test: `mocha --recursive`
+22 error Exit status 1
+23 error Failed at the hapi-app@1.0.0 test script 'mocha --recursive'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the hapi-app package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     mocha --recursive
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs hapi-app
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls hapi-app
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
