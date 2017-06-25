@@ -1,3 +1,4 @@
+/* eslint no-console: "off" */
 const Hapi = require('hapi');
 const mongojs = require('mongojs');
 
@@ -21,5 +22,3 @@ server.register([
   });
 
 });
-
-
