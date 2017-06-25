@@ -1,14 +1,25 @@
-'use strict';
-
 const Hapi = require('hapi');
+const mongojs = require('mongojs');
+
 
 const server = new Hapi.Server();
 server.connection({ port: 3000, host: 'localhost' });
 
-server.start((err) => {
+server.app.db = mongojs('mongodb://localhost:27017/mountains', ['mountains']);
 
-    if (err) {
-        throw err;
-    }
-    console.log(`Server running at: ${server.info.uri}`);
+
+server.register([
+  require('./lib/routes/mountains')
+], (err) => {
+
+  if (err) {
+    throw err;
+  }
+
+  server.start((err) => {
+    console.log('Server running at:', server.info.uri);
+  });
+
 });
+
+
