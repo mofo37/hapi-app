@@ -1,17 +1,22 @@
+// const Server = require('../../lib/routes/mountains');
+const Chai = require('chai');
+
+Chai.use(require('chai-http'));
+
 const db = require('./_db');
 const request = require('./_request');
 const assert = require('chai').assert;
 
-describe.only('mountains api', () => {
+
+describe.only('Server', () => {
 
   before(db.drop);
 
-  it('initial /GET returns empty list', () => {
-    return request.get('/api/mountains')
-      .then(req => {
-        const mountains = req.body;
-        assert.deepEqual(mountains, []);
-      });
+  it('GETs an empty list', () => {
+    request.get({url: '/mountains'}, (res) => {
+      assert.equal(res.statusCode, 200);
+      assert.deepEqual(res.body, []);
+    });
   });
 
   let MountHood = {
@@ -31,7 +36,7 @@ describe.only('mountains api', () => {
 
   function saveMountain(mountain) {
     return request
-      .post('/api/mountains')
+      .post('/mountains')
       .send(mountain)
       .then(res => res.body);
   }
@@ -43,7 +48,7 @@ describe.only('mountains api', () => {
         MountHood = saved;
       })
       .then(() => {
-        return request.get(`/api/mountains/${MountHood._id}`);
+        return request.get(`/mountains/${MountHood._id}`);
       })
       .then(res => res.body)
       .then(got => {
@@ -53,7 +58,7 @@ describe.only('mountains api', () => {
 
   it('GET returns 404 for non-existent id', () => {
     const nonId = '589d04a8b6695bbdfd3106f1';
-    return request.get(`/api/mountains/${nonId}`)
+    return request.get(`/mountains/${nonId}`)
       .then(
       () => { throw new Error('expected 404'); },
       res => {
@@ -71,44 +76,13 @@ describe.only('mountains api', () => {
         MountSaintHelen = savedMountains[0];
         MountRanier = savedMountains[1];
       })
-      .then(() => request.get('/api/mountains'))
+      .then(() => request.get('/mountains'))
       .then(res => res.body)
       .then(mountains => {
         assert.equal(mountains.length, 3);
         assert.include(mountains, MountHood);
         assert.include(mountains, MountSaintHelen);
         assert.include(mountains, MountRanier);
-      });
-  });
-
-  it('updates mountain', () => {
-    MountHood.height = 11200;
-    return request.put(`/api/mountains/${MountHood._id}`)
-      .send(MountHood)
-      .then(res => res.body)
-      .then(updated => {
-        assert.equal(updated.height, 11200);
-      });
-  });
-
-  it('deletes a mountain', () => {
-    return request.delete(`/api/mountains/${MountSaintHelen._id}`)
-      .then(res => res.body)
-      .then(result => {
-        assert.isTrue(result.removed);
-      })
-      .then(() => request.get('/api/mountains'))
-      .then(res => res.body)
-      .then(mountains => {
-        assert.equal(mountains.length, 2);
-      });
-  });
-
-  it('delete a non-existent mountain is removed false', () => {
-    return request.delete(`/api/mountains/${MountRanier._id}`)
-      .then(res => res.body)
-      .then(result => {
-        assert.isFalse(result.removed);
       });
   });
 
@@ -119,5 +93,4 @@ describe.only('mountains api', () => {
       () => { }
       );
   });
-
 });
