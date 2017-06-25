@@ -25,11 +25,10 @@
     "mocha": "^3.3.0"
   },
   "dependencies": {
-    "boom": "^4.2.0",
-    "hapi": "^16.1.0",
-    "hapi-mongodb": "^6.2.1",
-    "joi": "^10.2.2",
-    "mongojs": "^2.4.0",
-    "node-uuid": "^1.4.7"
+    "boom": "^5.1.0",
+    "hapi": "^16.4.3",
+    "hapi-bodyparser": "^1.0.2",
+    "hapi-mongoose": "^1.0.1",
+    "mongojs": "^2.4.0"
   }
 }
