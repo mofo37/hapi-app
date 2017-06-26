@@ -3,12 +3,11 @@ const request = require('./_request');
 const assert = require('chai').assert;
 
 
-describe.only('Server', () => {
+describe('Server', () => {
 
   before(db.drop);
 
   it('GETs an empty list', () => {
-    console.log(request);
     request.get({url: '/mountains'}, (res) => {
       assert.equal(res.statusCode, 200);
       assert.deepEqual(res.body, []);
