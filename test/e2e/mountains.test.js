@@ -1,8 +1,3 @@
-// const Server = require('../../lib/routes/mountains');
-const Chai = require('chai');
-
-Chai.use(require('chai-http'));
-
 const db = require('./_db');
 const request = require('./_request');
 const assert = require('chai').assert;
@@ -13,6 +8,7 @@ describe.only('Server', () => {
   before(db.drop);
 
   it('GETs an empty list', () => {
+    console.log(request);
     request.get({url: '/mountains'}, (res) => {
       assert.equal(res.statusCode, 200);
       assert.deepEqual(res.body, []);
